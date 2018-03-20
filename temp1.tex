@@ -1,0 +1,71 @@
+
+
+% LAY OUT
+\usepackage{geometry}
+\geometry{% siehe geometry.pdf (Figure 1)
+	bottom=30mm,
+	showframe=false, % For debugging: try true and see the layout frames
+	margin=30mm,
+	marginparsep=3mm,
+	marginparwidth=20mm
+}
+
+
+%\usepackage{float} % % Extendes support for floating objects (tables, figures), adds the [H] placing option (\begin{figure}[H]) which palces it "Here" (without any doubt).
+
+
+
+
+
+
+
+
+
+% MARGIN NOTES
+%\usepackage{marginnote}
+
+
+%linguistic packages
+\usepackage{gb4e} %glosses and examples
+
+%%%begin document%%%%%
+
+\begin{document}  
+
+
+\published{$date$.}
+
+$if(title)$
+\maketitle
+$endif$
+
+$if(toc)$
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+$endif$
+
+$if(abstract)$
+\begin{abstract}
+\vspace*{-0.75in} \noindent \emph{Abstract:} 
+\noindent $abstract$
+\end{abstract}
+$endif$
+
+\setlength{\parindent}{1cm} %indent
+\setlength{\parskip}{0em} %# space between paragraphs
+
+$body$
+
+
+
+% formatting the bibliography
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+\setlength{\parskip}{8pt}
+\noindent
+
+
+\end{document}
