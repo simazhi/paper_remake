@@ -11,20 +11,9 @@
 }
 \newline
 \\
-$for(author)$
-$author.name$\textsuperscript{\getAff{$author.affiliation$}}$if(author.corresponding)$\textsuperscript{*}$endif$$sep$,
-$endfor$
-\\
-\bigskip
-$for(address)$
-\textbf{\getAff{$address.code$}}$address.address$\\
-$endfor$
-\bigskip
-$for(author)$
-$if(author.corresponding)$
-* Corresponding author: $author.email$\\
+$if(author)$
+$author$
 $endif$
-$endfor$
 \end{flushleft}
 % Please keep the abstract below 300 words
 $if(abstract)$
@@ -40,12 +29,12 @@ $if(author_summary)$
 $author_summary$
 $endif$
 
-\linenumbers
+%\linenumbers
 
 % Use "Eq" instead of "Equation" for equation citations.
 $body$
 
-\nolinenumbers
+%\nolinenumbers
 
 $if(biblio-files)$
 \bibliography{$biblio-files$}

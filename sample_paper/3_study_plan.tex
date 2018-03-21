@@ -32,7 +32,6 @@
 \hypersetup{unicode=true,
             pdftitle={Study Plan for the Financial Assistance Grant for International Students},
             pdfauthor={Thomas Van Hoey 司馬智},
-            pdfkeywords={test one, two, three},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -94,8 +93,12 @@
 
 
 
-
-
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\fancyhead[LE,RO]{\thepage}
+\fancyfoot{}
 
 
 
@@ -121,16 +124,9 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-\noindent This is the abstact. I don't know what to write here but I
-hope it shows up. I have been very grateful to have held the Research
-Fellowship for Oustanding International Doctoral Students at National
-Taiwan University 國立臺灣大學國際優秀博士班學生研究獎助 for three years
-(the maximum period). This financial support helped me accomplish many
-academic goals in the past three years (see below and figure . However,
-as shown in the table below, I plan to finish my doctoral dissertation
-at the end of the next academic year (2018-2019). For this reason, I am
-applying for the Financial Assistance Grant for International Students
-provided by National Taiwan University 國立臺灣大學國際學位生助學金.
+\noindent ``Here is the abstract. Replace the text within the quotation
+marks + the quotation marks themselves for the final abstract.''
+\par \textbf{Keywords:} a, b
 \end{abstract}
 
 \setlength{\parindent}{0.5cm} %#indent
