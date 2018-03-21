@@ -11,31 +11,38 @@ csl: unified-style-linguistics.csl
 
 output:
   bookdown::pdf_document2:
+#    template: attemplate.tex
     fig_caption: yes
     latex_engine: xelatex
+    keep_tex: yes
     toc: no
+    includes:
+      in_header: in_header.tex
+      before_body: before_body.tex
+      after_body: after_body.tex
+      
+
+
 documentclass: article
 fontsize: 12pt
 geometry: margin=1in
-
-header-includes:
-- \setlength{\parindent}{1cm} #indent
-- \setlength{\parskip}{0em} # space between paragraphs
-#- \usepackage{float} #use the 'float' package
-#- \floatplacement{figure}{H} #make every figure with caption = h
-- \usepackage{gb4e}
 linestretch: 1
 
-
-
 mainfont: Noto Serif
+sansfont: Noto Sans
 CJKmainfont: Noto Sans CJK TC
+
+abstract: "This is the abstact. I don't know what to write here but I hope it shows up. I have been very grateful to have held the Research Fellowship for Oustanding International Doctoral Students at National Taiwan University 國立臺灣大學國際優秀博士班學生研究獎助  for three years (the maximum period). This financial support helped me accomplish many academic goals in the past three years (see below and figure . However, as shown in the table below, I plan to finish my doctoral dissertation at the end of the next academic year (2018-2019). For this reason, I am applying for the Financial Assistance Grant for International Students provided by National Taiwan University 國立臺灣大學國際學位生助學金."
+
+keywords: "test one, two, three"
 ---
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+
 
 # Introduction
 I have been very grateful to have held the Research Fellowship for Oustanding International Doctoral Students at National Taiwan University 國立臺灣大學國際優秀博士班學生研究獎助 ^[This scholarship is now renamed the Diaolong Doctoral Scholarship 雕龍國際博士班學生獎助.] for three years (the maximum period). This financial support helped me accomplish many academic goals in the past three years (see below and figure \@ref(fig:progress)). However, as shown in the table below, I plan to finish my doctoral dissertation at the end of the next academic year (2018-2019). For this reason, I am applying for the Financial Assistance Grant for International Students provided by National Taiwan University 國立臺灣大學國際學位生助學金.  
@@ -87,7 +94,6 @@ knitr::include_graphics(path = "progress.pdf")
 
 
 # References
-
 \setlength{\parindent}{-0.5in}
 \setlength{\leftskip}{0.5in}
 \setlength{\parskip}{8pt}
