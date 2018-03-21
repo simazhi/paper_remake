@@ -2,7 +2,54 @@
 
 
 \begin{document}
+\vspace*{0.2in}
 
+% Title must be 250 characters or less.
+\begin{flushleft}
+{\Large
+\textbf\newline{$title$} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+}
+\newline
+\\
+$for(author)$
+$author.name$\textsuperscript{\getAff{$author.affiliation$}}$if(author.corresponding)$\textsuperscript{*}$endif$$sep$,
+$endfor$
+\\
+\bigskip
+$for(address)$
+\textbf{\getAff{$address.code$}}$address.address$\\
+$endfor$
+\bigskip
+$for(author)$
+$if(author.corresponding)$
+* Corresponding author: $author.email$\\
+$endif$
+$endfor$
+\end{flushleft}
+% Please keep the abstract below 300 words
+$if(abstract)$
+\section*{Abstract}
+$abstract$
+$endif$
 
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLOS ONE authors please skip this step. 
+% Author Summary not valid for PLOS ONE submissions.   
+$if(author_summary)$
+\section*{Author summary}
+$author_summary$
+$endif$
+
+\linenumbers
+
+% Use "Eq" instead of "Equation" for equation citations.
+$body$
+
+\nolinenumbers
+
+$if(biblio-files)$
+\bibliography{$biblio-files$}
+$endif$
 
 \end{document}
+
