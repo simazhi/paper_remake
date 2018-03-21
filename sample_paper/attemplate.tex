@@ -1,44 +1,99 @@
 \documentclass{article}
 
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\fancyhead[LE,RO]{\thepage}
+\fancyfoot{}
+
+
+\usepackage{graphicx} %graphs
+\usepackage{longtable,booktabs,setspace}
+\usepackage{hyperref}
+
+%- \usepackage{float} #use the 'float' package
+%- \floatplacement{figure}{H} #make every figure with caption = h
+\usepackage{gb4e}
+
+
+% To pass between YAML and LaTeX the dollar signs are added by CII
+\title{$title$}
+\author{$author$}
+% The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
+\date{$date$}
+%\division{$division$}
+%\advisor{$advisor$}
+%\institution{$institution$}
+%\degree{$degree$}
+%If you have two advisors for some reason, you can use the following
+% Uncommented out by CII
+$if(altadvisor)$
+\altadvisor{$altadvisor$}
+$endif$
+% End of CII addition
+
+
+
+
 \begin{document}
-\vspace*{0.2in}
 
-% Title must be 250 characters or less.
-\begin{flushleft}
-{\Large
-\textbf\newline{$title$} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
-}
-\newline
-\\
-$if(author)$
-$author$
+% Everything below added by CII
+$if(title)$
+  \maketitle
 $endif$
-\end{flushleft}
-% Please keep the abstract below 300 words
+
+%\frontmatter % this stuff will be roman-numbered
+\pagestyle{empty} % this removes page numbers from the frontmatter
+
+$if(acknowledgements)$
+  \begin{acknowledgements}
+    $acknowledgements$
+  \end{acknowledgements}
+$endif$
+
+$if(preface)$
+  \begin{preface}
+    $preface$
+  \end{preface}
+$endif$
+
+$if(toc)$
+  \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+  \setcounter{tocdepth}{$toc-depth$}
+  \tableofcontents
+$endif$
+
+$if(lot)$
+  \listoftables
+$endif$
+
+$if(lof)$
+  \listoffigures
+$endif$
+
 $if(abstract)$
-\section*{Abstract}
-$abstract$
+  \begin{abstract}
+    $abstract$
+  \end{abstract}
 $endif$
 
-% Please keep the Author Summary between 150 and 200 words
-% Use first person. PLOS ONE authors please skip this step. 
-% Author Summary not valid for PLOS ONE submissions.   
-$if(author_summary)$
-\section*{Author summary}
-$author_summary$
+$if(dedication)$
+  \begin{dedication}
+    $dedication$
+  \end{dedication}
 $endif$
 
-%\linenumbers
+%\mainmatter % here the regular arabic numbering starts
+\pagestyle{fancyplain} % turns page numbering back on
 
-% Use "Eq" instead of "Equation" for equation citations.
+\setlength{\parindent}{0.5cm} %#indent
+\setlength{\parskip}{0em} %# space between paragraphs
+
 $body$
 
-%\nolinenumbers
 
-$if(biblio-files)$
-\bibliography{$biblio-files$}
-$endif$
+% Index?
 
 \end{document}
-
