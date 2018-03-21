@@ -1,0 +1,82 @@
+\documentclass[12pt,article,oneside]{memoir}
+
+
+$if(smallverbatim)$
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\footnotesize}
+$endif$
+
+$if(title)$
+\title{\bigskip \bigskip $title$$if(thanks)$\thanks{$thanks$} $endif$ }
+$endif$ 
+
+%\author{$for(author)$$author$$sep$$endfor$}
+
+%\author{$for(author)$\Large $author.name$\vspace{0.05in} \normalsize\emph{$author.affiliation$} \footnotesize \url{$author.email$}\vspace*{0.2in} $sep$ \and $endfor$}
+
+\author{$for(author)$\Large $author.name$ \vspace{0.05in} \small \protect\\ \emph{$author.affiliation$} \footnotesize \protect\\ $author.email$ $sep$ \and $endfor$}
+
+%\author{$for(author)$$author.name$ ($author.affiliation$)$sep$ \protect\and $endfor$}
+
+\date{}
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+
+% LAY OUT
+\usepackage{geometry}
+\geometry{% siehe geometry.pdf (Figure 1)
+	bottom=30mm,
+	showframe=false, % For debugging: try true and see the layout frames
+	margin=30mm,
+	marginparsep=3mm,
+	marginparwidth=20mm
+}
+
+
+%\usepackage{float} % % Extendes support for floating objects (tables, figures), adds the [H] placing option (\begin{figure}[H]) which palces it "Here" (without any doubt).
+
+
+% MARGIN NOTES
+%\usepackage{marginnote}
+
+
+%linguistic packages
+\usepackage{gb4e} %glosses and examples
+
+%%%%BEGIN DOCUMENT %%%
+\begin{document}
+
+
+
+\published{$date$}
+
+$if(title)$
+\maketitle
+$endif$
+
+$if(toc)$
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+$endif$
+
+$if(abstract)$
+\begin{abstract}
+\vspace*{-0.75in}\noindent \emph{Abstract:} $abstract$
+$if(keywords)$
+$keywords$
+\end{abstract}
+$endif$
+$endif$
+
+$body$
+
+
+
+
+\end{document}
+

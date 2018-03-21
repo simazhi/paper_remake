@@ -5,11 +5,11 @@ date: "20/3/2018"
 ctex: yes
 output:
   bookdown::pdf_document2:
-    template: temp1.tex
+    template: temp2.tex
     fig_caption: yes
-    keep_tex: yes
+    keep_tex: no
     latex_engine: xelatex
-    toc: yes
+    toc: no
 fig.width: 6
 fontsize: 12pt
 #geometry: margin=30mm
@@ -339,6 +339,5 @@ Van Hoey, Thomas. 2017. The thunder rolls: iconicity and ideophones in Chinese m
 Van Hoey, Thomas & Chiarung Lu. under review. A semantic map for ideophones: From an implicational hierarchy to the spinning top model. Cognitive Linguistics.
 Voeltz, Erhard Friedrich Karl & Christa Kilian-Hatz (eds.). 2001. Ideophones. (Typological Studies in Language v. 44). Amsterdam ; Philadelphia: J. Benjamins.
 Wierzbicka, Anna. 1992. Defining emotion concepts. Cognitive science 16. 539-581.
-
 
 
